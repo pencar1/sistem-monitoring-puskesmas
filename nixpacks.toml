@@ -3,6 +3,7 @@ nixPkgs = ["php", "phpPackages.composer"]
 
 [phases.build]
 cmds = [
+  "touch /tmp/dummy.sqlite",
   "composer install --no-dev --optimize-autoloader",
   "php artisan config:cache",
   "php artisan route:cache",
